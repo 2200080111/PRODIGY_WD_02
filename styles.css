@@ -1,0 +1,92 @@
+body {
+  font-family: Arial, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #1abc9c;
+  margin: 0;
+  overflow: hidden;
+}
+
+.container {
+  text-align: center;
+}
+
+.logo {
+  font-family: 'Pacifico', cursive;
+  font-size: 3em;
+  color: rgb(25, 25, 25);
+  margin-bottom: 20px;
+  transition: transform 0.5s ease-in-out, color 0.5s ease-in-out;
+}
+
+.logo:hover {
+  transform: scale(1.1);
+  color: #f6f7f8;
+}
+
+.stopwatch {
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  animation: fadeIn 1s ease-in-out;
+}
+
+#display {
+  font-size: 2em;
+  margin-bottom: 20px;
+  color: #333;
+  transition: color 0.5s;
+}
+
+#display.running {
+  color: #007bff;
+}
+
+.buttons button {
+  font-size: 1em;
+  padding: 10px;
+  margin: 5px;
+  border: none;
+  background-color: #007bff;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+.buttons button:hover {
+  background-color: #0056b3;
+  transform: scale(1.1);
+}
+
+.buttons button:disabled {
+  background-color: #cccccc;
+  cursor: not-allowed;
+}
+
+#laps {
+  margin-top: 20px;
+  text-align: left;
+  max-height: 200px;
+  overflow-y: auto;
+  transition: max-height 0.5s ease-in-out;
+}
+
+#laps div {
+  padding: 5px;
+  border-bottom: 1px solid #cccccc;
+  animation: slideIn 0.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideIn {
+  from { transform: translateX(-100%); }
+  to { transform: translateX(0); }
+}
